@@ -2,7 +2,7 @@
 
 This repository contains a special birthday HTML page for Roma.
 It includes:
-- Deep romantic lines
+- special lines 
 - Photos
 - Background music
 
