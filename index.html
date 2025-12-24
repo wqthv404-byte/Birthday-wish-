@@ -21,8 +21,68 @@
       margin:8px 0;
     }
   </style>
+  <style>
+body {
+  background: linear-gradient(to bottom, #ffe6f0, #fff);
+  overflow-x: hidden;
+}
+
+/* Floating balloons */
+.balloon {
+  position: fixed;
+  bottom: -150px;
+  font-size: 50px;
+  animation: floatUp 12s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Emoji bloom */
+.emoji {
+  position: fixed;
+  font-size: 28px;
+  animation: bloom 6s linear infinite;
+}
+
+@keyframes bloom {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.4); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+/* Cake section */
+.cake {
+  font-size: 80px;
+  margin: 40px 0;
+}
+
+/* Auto scroll */
+html {
+  scroll-behavior: smooth;
+}
+  </style>
 </head>
 <body>
+  <!-- Balloons -->
+<div class="balloon" style="left:10%">🎈</div>
+<div class="balloon" style="left:30%">🎈</div>
+<div class="balloon" style="left:50%">🎈</div>
+<div class="balloon" style="left:70%">🎈</div>
+<div class="balloon" style="left:90%">🎈</div>
+
+<!-- Cake & candles -->
+<div class="cake">
+🎂🕯️🕯️🕯️
+</div>
+
+<!-- Emoji bloom -->
+<div class="emoji" style="top:20%; left:15%">💖</div>
+<div class="emoji" style="top:40%; left:70%">✨</div>
+<div class="emoji" style="top:60%; left:30%">🥳</div>
+<div class="emoji" style="top:80%; left:80%">💞</div>
 <h1>🎉 Happy Birthday Roma ggggggggg😍😍🥳🥳😘😘💞🎉 heyyy 
 happiest birthday it's your birthday Okay 👏🏻👏🏻👍🏻👍🏻 A special day hmmmmmmmmmmmmm
   when churail like you came in the world  ohhh sorry cutiessssss 😘😘😘😍😍🥰🥰</h1>
@@ -327,6 +387,10 @@ Forever and always, my love 😘❤️
 have a great, fantastic, beautiful, gorgeous,good, funny, romantic, loving and 🤔🥲🫠🤭🥴😁 ACHA dayyyyy😁😁🥳🥳🥳🥳🥳🥳</p>
 
 <div class="hearts">💖💘😚❤️💞</div>
-  
+  <script>
+setInterval(() => {
+  window.scrollBy(0, 1);
+}, 50);
+  </script>
 </body>
 </html>
