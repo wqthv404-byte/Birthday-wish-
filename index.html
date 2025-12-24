@@ -65,6 +65,33 @@ html {
 }
   </style>
 </head>
+  <style>
+/* Balloons Animation */
+.balloons {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+  animation: float 10s infinite;
+}
+
+/* Random horizontal positions */
+.balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+.balloon:nth-child(2) { left: 30%; animation-delay: 2s; }
+.balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+.balloon:nth-child(4) { left: 70%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(0deg); }
+  50% { transform: translateY(50vh) rotate(15deg); }
+  100% { transform: translateY(-20vh) rotate(-15deg); }
+}
+  </style>
 <body>
   <!-- Balloons -->
 <div class="balloon" style="left:10%">🎈</div>
@@ -86,7 +113,13 @@ html {
 <h1>🎉 Happy Birthday Roma ggggggggg😍😍🥳🥳😘😘💞🎉 heyyy 
 happiest birthday it's your birthday Okay 👏🏻👏🏻👍🏻👍🏻 A special day hmmmmmmmmmmmmm
   when churail like you came in the world  ohhh sorry cutiessssss 😘😘😘😍😍🥰🥰</h1>
-
+<!-- Floating Emoji Balloons -->
+<div class="balloons">
+  <div class="balloon" style="font-size:80px;">🎈</div>
+  <div class="balloon" style="font-size:100px;">🎈</div>
+  <div class="balloon" style="font-size:90px;">🎈</div>
+  <div class="balloon" style="font-size:120px;">🎈</div>
+</div>
 <p>
 On this special day💘, I just want you to know how precious you are 💖  
 Your smile makes everything brighter💞,  
