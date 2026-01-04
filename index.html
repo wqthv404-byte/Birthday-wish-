@@ -4,62 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday Roma gggggggg🥳🥳🥳🫣💌💘</title>
-  <style>
-    
-  .gift-btn {
-    padding: 15px 30px;
-    font-size: 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    background: crimson;
-    color: white;
-    margin-top: 40px;
-  }
-
-  .celebrate {
-    background: black;
-    color: white;
-  }
-
-  .celebrate h1,
-  .celebrate h2,
-  .celebrate h3 {
-    text-shadow: 0 0 10px gold,
-                 0 0 20px gold,
-                 0 0 40px orange;
-  }
-
-  .firework {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: gold;
-    border-radius: 50%;
-    animation: explode 1s linear infinite;
-  }
-
-  @keyframes explode {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(20); opacity: 0; }
-  }
-    body{
-      background:#fff0f5;
-      color:#333;
-      font-family: Arial, sans-serif;
-      padding:40px;
-      text-align:center;
-    }
-    h1{
-      color:#ff4d6d;
-      margin-bottom:30px;
-    }
-    p{
-      font-size:20px;
-      margin:8px 0;
-    }
-      document.getElementById("story").style.display = "block";
-  </style>
+  
   <style>
     .side-emoji {
   position: fixed;
@@ -160,6 +105,59 @@ body {
 html {
   scroll-behavior: smooth;
 }
+  .gift-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: crimson;
+    color: white;
+    margin-top: 40px;
+  }
+
+  .celebrate {
+    background: black;
+    color: white;
+  }
+
+  .celebrate h1,
+  .celebrate h2,
+  .celebrate h3 {
+    text-shadow: 0 0 10px gold,
+                 0 0 20px gold,
+                 0 0 40px orange;
+  }
+
+  .firework {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: gold;
+    border-radius: 50%;
+    animation: explode 1s linear infinite;
+  }
+
+  @keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(20); opacity: 0; }
+  }
+    body{
+      background:#fff0f5;
+      color:#333;
+      font-family: Arial, sans-serif;
+      padding:40px;
+      text-align:center;
+    }
+    h1{
+      color:#ff4d6d;
+      margin-bottom:30px;
+    }
+    p{
+      font-size:20px;
+      margin:8px 0;
+    }
+      document.getElementById("story").style.display = "block";
   </style>
   <h1 style="
   font-size:120px;   /* size bara kar diya */
@@ -581,67 +579,61 @@ setInterval(() => {
   Project by Hiba • HTML • CSS • JavaScript
 </p>
   </footer>
-    <script>
+<script>
 function startCelebration() {
-
-  // button hide
-  document.getElementById("giftBtn").style.display = "none";
-
-  // background change
   document.body.style.background = "black";
   document.body.style.color = "white";
 
-  // text show
+  document.getElementById("giftBtn").style.display = "none";
   document.getElementById("message").style.display = "block";
   document.getElementById("story").style.display = "block";
 
-  // fireworks start
-  fireworks();
+  launchFireworks();
 }
 
-function fireworks() {
-  for (let i = 0; i < 10; i++) {
-    setTimeout(() => {
-      explode();
-    }, i * 500);
+function launchFireworks() {
+  for (let i = 0; i < 8; i++) {
+    setTimeout(createFirework, i * 400);
   }
 }
 
-function explode() {
-  const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerHeight;
+function createFirework() {
+  const container = document.createElement("div");
+  container.style.position = "fixed";
+  container.style.left = Math.random() * window.innerWidth + "px";
+  container.style.top = Math.random() * window.innerHeight + "px";
+  container.style.pointerEvents = "none";
 
-  for (let i = 0; i < 30; i++) {
-    const dot = document.createElement("div");
-    dot.style.position = "fixed";
-    dot.style.left = x + "px";
-    dot.style.top = y + "px";
-    dot.style.width = "6px";
-    dot.style.height = "6px";
-    dot.style.borderRadius = "50%";
-    dot.style.background = "hsl(" + Math.random()*360 + ",100%,60%)";
-    dot.style.pointerEvents = "none";
+  for (let i = 0; i < 20; i++) {
+    const spark = document.createElement("div");
+    spark.style.position = "absolute";
+    spark.style.width = "6px";
+    spark.style.height = "6px";
+    spark.style.background = "hsl(" + Math.random() * 360 + ",100%,60%)";
+    spark.style.borderRadius = "50%";
 
     const angle = Math.random() * 2 * Math.PI;
-    const distance = Math.random() * 150;
+    const distance = Math.random() * 120;
 
-    dot.animate([
+    spark.animate([
       { transform: "translate(0,0)", opacity: 1 },
       {
-        transform: `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px)`,
+        transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`,
         opacity: 0
       }
     ], {
-      duration: 1200,
+      duration: 1000,
       easing: "ease-out"
     });
 
-    document.body.appendChild(dot);
-
-    setTimeout(() => dot.remove(), 1300);
+    container.appendChild(spark);
   }
+
+  document.body.appendChild(container);
+
+  setTimeout(() => container.remove(), 1200);
 }
-</script>
+</script
 </body>
       
 </html>
