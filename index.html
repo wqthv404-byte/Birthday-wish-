@@ -5,29 +5,7 @@
   <meta charset="UTF-8">
   <title>Happy Birthday Roma gggggggg🥳🥳🥳🫣💌💘</title>
   <style>
-    <script>
-  function startCelebration() {
-    document.body.classList.add("celebrate");
-
-    for (let i = 0; i < 30; i++) {
-      createFirework();
-    }
-  }
-
-  function createFirework() {
-    const firework = document.createElement("div");
-    firework.className = "firework";
-
-    firework.style.left = Math.random() * window.innerWidth + "px";
-    firework.style.top = Math.random() * window.innerHeight + "px";
-
-    document.body.appendChild(firework);
-
-    setTimeout(() => {
-      firework.remove();
-    }, 1000);
-  }
-</script>
+    
   .gift-btn {
     padding: 15px 30px;
     font-size: 20px;
@@ -135,6 +113,29 @@ html {
   I love you babe 😘😘
   </h1>
 </head>
+  <script>
+  function startCelebration() {
+    document.body.classList.add("celebrate");
+
+    for (let i = 0; i < 30; i++) {
+      createFirework();
+    }
+  }
+
+  function createFirework() {
+    const firework = document.createElement("div");
+    firework.className = "firework";
+
+    firework.style.left = Math.random() * window.innerWidth + "px";
+    firework.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+  </script>
   <style>
 /* Balloons Animation */
 .balloons {
@@ -162,14 +163,36 @@ html {
   100% { transform: translateY(-20vh) rotate(-15deg); }
 }
   </style>
+    let count = 0;
+let interval = setInterval(() => {
+  createFirework();
+  count++;
+
+  if (count > 25) {
+    clearInterval(interval);
+  }
+}, 200);
+    }
+  }
+
+  function createFirework() {
+    const firework = document.createElement("div");
+    firework.className = "firework";
+
+    firework.style.left = Math.random() * window.innerWidth + "px";
+    firework.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+    document.getElementById("giftBtn").style.display = "none";
+</script>
   
 <body>
-  <button class="gift-btn" onclick="startCelebration()">
-  🎁 Open Gift
-    document.getElementById("message").style.display = "block";
- <button id="giftBtn" class="gift-btn" onclick="startCelebration()">
-  🎁 Open Gift
- </button>
+
   </button>
   <!-- Balloons -->
 <div class="balloon" style="left:10%">🎈</div>
@@ -239,6 +262,12 @@ Always stay the same beautiful soul 🌙
 ">
   ▶ Play Music
 </button>
+    <button class="gift-btn" onclick="startCelebration()">
+  🎁 Open Gift
+    document.getElementById("message").style.display = "block";
+ <button id="giftBtn" class="gift-btn" onclick="startCelebration()">
+  🎁 Open Gift
+ </button>
 
 <script>
 function playMusic() {
@@ -512,33 +541,7 @@ setInterval(() => {
 }, 50);
   </script>
   <script>
-  let count = 0;
-let interval = setInterval(() => {
-  createFirework();
-  count++;
 
-  if (count > 25) {
-    clearInterval(interval);
-  }
-}, 200);
-    }
-  }
-
-  function createFirework() {
-    const firework = document.createElement("div");
-    firework.className = "firework";
-
-    firework.style.left = Math.random() * window.innerWidth + "px";
-    firework.style.top = Math.random() * window.innerHeight + "px";
-
-    document.body.appendChild(firework);
-
-    setTimeout(() => {
-      firework.remove();
-    }, 1000);
-  }
-    document.getElementById("giftBtn").style.display = "none";
-  </script>
   <footer> 
   <hr>
 <p style="margin-top:20px; font-size:14px;">
