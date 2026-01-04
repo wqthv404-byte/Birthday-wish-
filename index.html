@@ -555,40 +555,73 @@ setInterval(() => {
 }, 50);
   </script>
   <script>
-
-  <footer> 
+<footer> 
   <hr>
 <p style="margin-top:20px; font-size:14px;">
   Project by Hiba • HTML • CSS • JavaScript
 </p>
   </footer>
-</body>
-      <script>
-    let count = 0;
-let interval = setInterval(() => {
-  createFirework();
-  count++;
+    <script>
+function startCelebration() {
 
-  if (count > 25) {
-    clearInterval(interval);
-  }
-}, 200);
-    }
-  }
+  // button hide
+  document.getElementById("giftBtn").style.display = "none";
 
-  function createFirework() {
-    const firework = document.createElement("div");
-    firework.className = "firework";
+  // background change
+  document.body.style.background = "black";
+  document.body.style.color = "white";
 
-    firework.style.left = Math.random() * window.innerWidth + "px";
-    firework.style.top = Math.random() * window.innerHeight + "px";
+  // text show
+  document.getElementById("message").style.display = "block";
+  document.getElementById("story").style.display = "block";
 
-    document.body.appendChild(firework);
+  // fireworks start
+  fireworks();
+}
 
+function fireworks() {
+  for (let i = 0; i < 10; i++) {
     setTimeout(() => {
-      firework.remove();
-    }, 1000);
+      explode();
+    }, i * 500);
   }
-    document.getElementById("giftBtn").style.display = "none";
+}
+
+function explode() {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement("div");
+    dot.style.position = "fixed";
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
+    dot.style.width = "6px";
+    dot.style.height = "6px";
+    dot.style.borderRadius = "50%";
+    dot.style.background = "hsl(" + Math.random()*360 + ",100%,60%)";
+    dot.style.pointerEvents = "none";
+
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = Math.random() * 150;
+
+    dot.animate([
+      { transform: "translate(0,0)", opacity: 1 },
+      {
+        transform: `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px)`,
+        opacity: 0
+      }
+    ], {
+      duration: 1200,
+      easing: "ease-out"
+    });
+
+    document.body.appendChild(dot);
+
+    setTimeout(() => dot.remove(), 1300);
+  }
+}
 </script>
+</body>
+      
 </html>
