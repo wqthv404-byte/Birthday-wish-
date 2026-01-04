@@ -61,6 +61,61 @@
       document.getElementById("story").style.display = "block";
   </style>
   <style>
+    .side-emoji {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 70px;
+  opacity: 0.9;
+  animation: glow 2s infinite alternate;
+  z-index: 999;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff;
+    transform: translateY(-50%) scale(1);
+  }
+  to {
+    text-shadow: 0 0 20px gold, 0 0 40px pink;
+    transform: translateY(-50%) scale(1.1);
+  }
+}.side-emoji {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 70px;
+  opacity: 0.9;
+  animation: glow 2s infinite alternate;
+  z-index: 999;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff;
+    transform: translateY(-50%) scale(1);
+  }
+  to {
+    text-shadow: 0 0 20px gold, 0 0 40px pink;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
     body {
   transition: background 1s;
     }
@@ -197,10 +252,33 @@ function createFirework() {
   50% { transform: translateY(50vh) rotate(15deg); }
   100% { transform: translateY(-20vh) rotate(-15deg); }
 }
+    #pageContent {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: intro 1.5s ease-out forwards;
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+    filter: blur(8px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: blur(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
   </style>
 
   
 <body>
+  <div id="pageContent">
+  <!-- tumhara existing content yahan -->
 
   </button>
   <!-- Balloons -->
@@ -549,12 +627,14 @@ Forever and always, my love 😘❤️
 have a great, fantastic, beautiful, gorgeous,good, funny, romantic, loving and 🤔🥲🫠🤭🥴😁 ACHA dayyyyy😁😁🥳🥳🥳🥳🥳🥳</p>
 
 <div class="hearts">💖💘😚❤️💞</div>
+  </div>
   <script>
 setInterval(() => {
   window.scrollBy(0, 1);
 }, 50);
   </script>
-  <script>
+  <div class="side-emoji left">🫰🏻🫵🏻</div>
+<div class="side-emoji right">🫰🏻🫵🏻</div>
 <footer> 
   <hr>
 <p style="margin-top:20px; font-size:14px;">
