@@ -171,61 +171,6 @@ html {
   I love you babe 😘😘
   </h1>
 </head>
-<script>
-function startCelebration() {
-  document.body.style.background = "black";
-  document.body.style.color = "white";
-
-  document.getElementById("giftBtn").style.display = "none";
-  document.getElementById("message").style.display = "block";
-  document.getElementById("story").style.display = "block";
-
-  launchFireworks();
-}
-
-function launchFireworks() {
-  for (let i = 0; i < 8; i++) {
-    setTimeout(createFirework, i * 400);
-  }
-}
-
-function createFirework() {
-  const container = document.createElement("div");
-  container.style.position = "fixed";
-  container.style.left = Math.random() * window.innerWidth + "px";
-  container.style.top = Math.random() * window.innerHeight + "px";
-  container.style.pointerEvents = "none";
-
-  for (let i = 0; i < 20; i++) {
-    const spark = document.createElement("div");
-    spark.style.position = "absolute";
-    spark.style.width = "6px";
-    spark.style.height = "6px";
-    spark.style.background = "hsl(" + Math.random() * 360 + ",100%,60%)";
-    spark.style.borderRadius = "50%";
-
-    const angle = Math.random() * 2 * Math.PI;
-    const distance = Math.random() * 120;
-
-    spark.animate([
-      { transform: "translate(0,0)", opacity: 1 },
-      {
-        transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`,
-        opacity: 0
-      }
-    ], {
-      duration: 1000,
-      easing: "ease-out"
-    });
-
-    container.appendChild(spark);
-  }
-
-  document.body.appendChild(container);
-
-  setTimeout(() => container.remove(), 1200);
-}
-</script>
   <style>
 /* Balloons Animation */
 .balloons {
@@ -354,10 +299,7 @@ Always stay the same beautiful soul 🌙
       <p id="message" style="display:none;">🎉 Surprise unlocked!</p>
 <p id="story" style="display:none;">Made with love 💖</p>
     </button>
-  <script>
-  document.getElementById("message").style.display = "block";
-document.getElementById("story").style.display = "block";
-  </script>
+
 <script>
 function playMusic() {
   document.getElementById("bgMusic").play();
@@ -368,13 +310,7 @@ function playMusic() {
 <audio controls autoplay loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-  <p id="message" style="display:none;">
-  🎉 Surprise unlocked!
-</p>
-
-<p id="story" style="display:none;">
-  This little surprise is made with love 💖
-</p>
+  
 <p>Some people walk into your life quietly,  
 and before you realize it, they become a habit you never want to break🫠🫠🥹😘.</p>
 
