@@ -198,34 +198,7 @@ function createFirework() {
   100% { transform: translateY(-20vh) rotate(-15deg); }
 }
   </style>
-  <script>
-    let count = 0;
-let interval = setInterval(() => {
-  createFirework();
-  count++;
 
-  if (count > 25) {
-    clearInterval(interval);
-  }
-}, 200);
-    }
-  }
-
-  function createFirework() {
-    const firework = document.createElement("div");
-    firework.className = "firework";
-
-    firework.style.left = Math.random() * window.innerWidth + "px";
-    firework.style.top = Math.random() * window.innerHeight + "px";
-
-    document.body.appendChild(firework);
-
-    setTimeout(() => {
-      firework.remove();
-    }, 1000);
-  }
-    document.getElementById("giftBtn").style.display = "none";
-</script>
   
 <body>
 
@@ -590,4 +563,32 @@ setInterval(() => {
 </p>
   </footer>
 </body>
+      <script>
+    let count = 0;
+let interval = setInterval(() => {
+  createFirework();
+  count++;
+
+  if (count > 25) {
+    clearInterval(interval);
+  }
+}, 200);
+    }
+  }
+
+  function createFirework() {
+    const firework = document.createElement("div");
+    firework.className = "firework";
+
+    firework.style.left = Math.random() * window.innerWidth + "px";
+    firework.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+    document.getElementById("giftBtn").style.display = "none";
+</script>
 </html>
