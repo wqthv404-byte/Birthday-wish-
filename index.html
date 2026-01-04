@@ -5,6 +5,66 @@
   <meta charset="UTF-8">
   <title>Happy Birthday Roma gggggggg🥳🥳🥳🫣💌💘</title>
   <style>
+    <script>
+  function startCelebration() {
+    document.body.classList.add("celebrate");
+
+    for (let i = 0; i < 30; i++) {
+      createFirework();
+    }
+  }
+
+  function createFirework() {
+    const firework = document.createElement("div");
+    firework.className = "firework";
+
+    firework.style.left = Math.random() * window.innerWidth + "px";
+    firework.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+</script>
+  .gift-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: crimson;
+    color: white;
+    margin-top: 40px;
+  }
+
+  .celebrate {
+    background: black;
+    color: white;
+  }
+
+  .celebrate h1,
+  .celebrate h2,
+  .celebrate h3 {
+    text-shadow: 0 0 10px gold,
+                 0 0 20px gold,
+                 0 0 40px orange;
+  }
+
+  .firework {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: gold;
+    border-radius: 50%;
+    animation: explode 1s linear infinite;
+  }
+
+  @keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(20); opacity: 0; }
+  }
     body{
       background:#fff0f5;
       color:#333;
@@ -20,6 +80,7 @@
       font-size:20px;
       margin:8px 0;
     }
+      document.getElementById("story").style.display = "block";
   </style>
   <style>
 body {
@@ -101,7 +162,15 @@ html {
   100% { transform: translateY(-20vh) rotate(-15deg); }
 }
   </style>
+  
 <body>
+  <button class="gift-btn" onclick="startCelebration()">
+  🎁 Open Gift
+    document.getElementById("message").style.display = "block";
+ <button id="giftBtn" class="gift-btn" onclick="startCelebration()">
+  🎁 Open Gift
+ </button>
+  </button>
   <!-- Balloons -->
 <div class="balloon" style="left:10%">🎈</div>
 <div class="balloon" style="left:30%">🎈</div>
@@ -138,9 +207,9 @@ and your existence makes life more beautiful🫠🥰💞💞🫀🫀😘😘 ✨
 <div class="balloons">
   <div class="balloon" style="left:5%; font-size:100px; color:black; animation-delay:0s;">🎈</div>
   <div class="balloon" style="left:20%; font-size:100px; color:pink; animation-delay:2s;">🎉</div>
-  <div class="balloon" style="left:35%; font-size:100px; color:purple; animation-delay:4s;">😉</div>
+  <div class="balloon" style="left:35%; font-size:100px; color:purple; animation-delay:4s;">🎊</div>
   <div class="balloon" style="left:50%; font-size:100px; color:blue; animation-delay:6s;">💞</div>
-  <div class="balloon" style="left:65%; font-size:200px; color:orange; animation-delay:8s;">😘</div>
+  <div class="balloon" style="left:65%; font-size:200px; color:orange; animation-delay:8s;">🎊</div>
   <div class="balloon" style="left:80%; font-size:100px; color:green; animation-delay:10s;">🎉</div>
   <div class="balloon" style="left:90%; font-size:100px; color:yellow; animation-delay:12s;">🎈</div>
 </div>
@@ -442,5 +511,39 @@ setInterval(() => {
   window.scrollBy(0, 1);
 }, 50);
   </script>
+  <script>
+  let count = 0;
+let interval = setInterval(() => {
+  createFirework();
+  count++;
+
+  if (count > 25) {
+    clearInterval(interval);
+  }
+}, 200);
+    }
+  }
+
+  function createFirework() {
+    const firework = document.createElement("div");
+    firework.className = "firework";
+
+    firework.style.left = Math.random() * window.innerWidth + "px";
+    firework.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+      firework.remove();
+    }, 1000);
+  }
+    document.getElementById("giftBtn").style.display = "none";
+  </script>
+  <footer> 
+  <hr>
+<p style="margin-top:20px; font-size:14px;">
+  Project by Hiba • HTML • CSS • JavaScript
+</p>
+  </footer>
 </body>
 </html>
